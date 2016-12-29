@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228222655) do
+ActiveRecord::Schema.define(version: 20161228233159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,30 @@ ActiveRecord::Schema.define(version: 20161228222655) do
   create_table "challenges", force: :cascade do |t|
     t.string "challenge_name"
     t.index ["challenge_name"], name: "index_challenges_on_challenge_name", using: :btree
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string   "exercise_item"
+    t.integer  "calories_burned"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string   "meal"
+    t.string   "food_item"
+    t.integer  "calories"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "weight"
+    t.integer  "water_intake"
+    t.integer  "daily_calories"
+    t.integer  "daily_workout"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

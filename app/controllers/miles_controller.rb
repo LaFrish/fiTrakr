@@ -2,8 +2,9 @@ class MilesController < ApplicationController
 
 
   def index
-    #  @user = User.find(params[:user_id])
     @miles = Mile.all
+    #  @user = User.find(params[:user_id])
+
 
   end
 
